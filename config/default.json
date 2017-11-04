@@ -1,0 +1,16 @@
+{
+    "port": 3000,
+    "appName": "API Rekognition",
+    "version": "0.1.0",
+    "prefix": "/v1",
+    "request": {
+        "ratelimit": {
+            "duration": 1000,
+            "max": 500
+        }
+    },
+    "redis": {
+        "port": 6379,
+        "host": "localhost"
+    }
+}
