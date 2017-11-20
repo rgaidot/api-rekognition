@@ -1,11 +1,13 @@
 import KoaRouter from 'koa-router';
-import config from 'config';
+import { prefix } from 'config';
 
 import { index } from '../controllers/ApiController';
 
 const apiRoutes = new KoaRouter();
 
-apiRoutes.prefix = config.prefix;
+const apiRoutes = new KoaRouter({
+    prefix: `${prefix}`,
+});
 
 apiRoutes.get('/', index);
 

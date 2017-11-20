@@ -1,6 +1,5 @@
-import config from 'config';
 import request from 'supertest';
-import { execSync } from 'child_process';
+import { appName, version } from 'config';
 
 import server from '../../server';
 
@@ -15,9 +14,9 @@ describe('apiRoutes tests', () => {
         await request(server.listen())
             .get('/v1')
             .expect(200, {
-                appName: config.appName,
+                appName,
                 environment: 'test',
-                version: config.version,
+                version,
             });
     });
 });
